@@ -6,7 +6,7 @@ import time
 import sys
 
 def IpAdmin(uid):
-    s.sendto("GET "+uid, ('192.168.50.78', 19601)  )
+    s.sendto("GET "+uid, ('mtzijin.com', 19601)  )
     data, addr = s.recvfrom(1024)  
     if not data:
         print "server has exist"  
