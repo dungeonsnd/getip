@@ -8,8 +8,9 @@ import uuid
 
 DEF_HOST ="mtzijin.com"
 DEF_PORT =19601
+DEF_UUID =str(uuid.uuid1())
 
-uid =str(uuid.uuid1())
+uid =DEF_UUID
 host =DEF_HOST
 port =DEF_PORT
 report_timer_sec =4
@@ -37,6 +38,10 @@ def IpReport(s):
         # 读取配置信息
         ff =None 
         try:
+            uid =DEF_UUID
+            host =DEF_HOST
+            port =DEF_PORT
+            
             ff = open('C:/IpReport.txt')
             all = ff.read()
             conf =json.loads(all)
@@ -48,9 +53,6 @@ def IpReport(s):
                 port =int(conf['port'])
         except Exception,e :
             print e
-            uid =str(uuid.uuid1())
-            host =DEF_HOST
-            port =DEF_PORT
         finally:
             if ff:
                 ff.close()
