@@ -1,6 +1,11 @@
 # getip
 Get the target pc ip adress.
 
+作者邮箱 dungeonsnd@gmail.com，有任何疑问请与作者联系 ^^
+
+
+
+
 本项目用于获取另一网络中某台机器的内网和外网ip地址.
 
 
