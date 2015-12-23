@@ -5,6 +5,7 @@ import socket
 import time
 import json
 import uuid
+import sys
 
 DEF_HOST ="mtzijin.com"
 DEF_PORT =19601
@@ -64,7 +65,7 @@ def IpReport(s):
         
         time.sleep(report_timer_sec)
 
-def Run():
+def Run(conf_file):
     while True:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         try:
@@ -75,7 +76,10 @@ def Run():
             s.close()
         time.sleep(4)
         continue
-        
+
 if __name__=="__main__":
-    Run()
+    conf_file =''
+    if len(sys.argv)>1:
+        conf_file =sys.argv[1]
+    Run(conf_file)
 
